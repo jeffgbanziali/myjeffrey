@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import Navbar from '../components/NavBar/Navbar'
 import { useLocation } from 'react-router'
-import studentsData from '../MyData/Students.json';
+//import studentsData from '../MyData/Students.json';
 import teachersData from '../MyData/Teachers.json';
 
 const StudentList = () => {
     const location = useLocation()
     const { user } = location.state
     const [students, setStudents] = useState([]);
+
+    const studentsData = JSON.parse(localStorage.getItem('students'))
 
     useEffect(() => {
 

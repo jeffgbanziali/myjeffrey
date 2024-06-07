@@ -1,31 +1,49 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import usersData from '../MyData/Students.json';
+import teachersData from '../MyData/Teachers.json';
 
 const SignInScreen = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-    const [users, setUsers] = useState(null);
     const [error, setError] = useState('');
 
     const navigate = useNavigate();
 
+
+    /* const handleLogin = (event) => {
+         event.preventDefault();
+ 
+         const user = usersData.find(user => user.username === username && user.password === password) || teachersData.find(user => user.username === username && user.password === password)
+ 
+         if (user) {
+             const token = btoa(`${username}:${password}`);
+             localStorage.setItem('authToken', token);
+             localStorage.setItem('user', JSON.stringify(user));
+             console.log("Mon user token", token)
+ 
+             navigate("/", { state: { user } });
+             window.location.reload();
+         } else {
+             setError('Identifiant ou mot de passe incorrect');
+         }
+     };*/
     const handleLogin = (event) => {
         event.preventDefault();
 
-        const usersData = JSON.parse(localStorage.getItem('users')) || [];
-        const user = usersData.find(user => user.username === username && user.password === password);
+        const studentsData = JSON.parse(localStorage.getItem('students'));
+        const teachersData = JSON.parse(localStorage.getItem('teachers'));
 
+        const user = studentsData.find(user => user.username === username && user.password === password) || teachersData.find(user => user.username === username && user.password === password)
+        console.log("user user est là", user)
         if (user) {
-            console.log("Viens ici", user);
-            if (user.role === 'student') {
-                navigate("/", { state: { user } });
-            } else if (user.role === "teacher") {
-                alert("Le prof s'est connecté !!!");
-                navigate("/", { state: { user } });
-            } else {
-                setError('Accès refusé vérifiez vos coordonnées');
-            }
+            const token = btoa(`${username}:${password}`);
+            localStorage.setItem('authToken', token);
+            localStorage.setItem('user', JSON.stringify(user));
+            console.log("Mon user token", token)
+
+            navigate("/", { state: { user } });
+            window.location.reload();
         } else {
             setError('Identifiant ou mot de passe incorrect');
         }

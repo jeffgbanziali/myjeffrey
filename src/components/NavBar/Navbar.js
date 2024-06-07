@@ -14,7 +14,7 @@ const Navbar = ({ user }) => {
 
     return (
         <>
-            <div className='z-10 flex flex-col justify-center  xl:h-[120px] h-[90px] shadow-lg w-full'>
+            <div className='z-10 flex flex-col items-center justify-center  xl:h-[120px] h-[90px] shadow-lg w-full'>
                 <div className='bg-blue-300 xl:h-[50%] h-full w-full flex items-center p-2'>
                     <div className='flex items-center w-full lg:w-1/3 p-2'>
                         <NavLink to="/" className='flex items-center'>
@@ -44,8 +44,8 @@ const Navbar = ({ user }) => {
                         </div>
                     </div>
                 </div>
-                <div className={` h-[50%] w-full  flex items-center justify-center ${isMenuOpen === true && 'hidden'} lg:flex`}>
-                    <ul className={`hidden  justify-around w-full  ${isMenuOpen === true && 'hidden'} p-4 `}>
+                <div className={` xl:h-[50%] w-[800px] xl:flex items-center justify-center ${isMenuOpen === true && 'hidden'} lg:flex`}>
+                    <ul className={`xl:flex hidden  justify-around w-full  ${isMenuOpen === true && 'hidden'} p-4 `}>
                         {user.role === "student" ? (
                             <>
                                 <li><button onClick={() => navigateTo('/')}>Accueil</button></li>

@@ -11,18 +11,31 @@ import EnterNote from '../Screens/EnterNote';
 import Ecole from '../Screens/Ecole';
 
 const Navigation = () => {
+
+    const authToken = localStorage.getItem('authToken');
+
+    console.log("mo est token est là non ? ", authToken)
+
+
     return (
         <BrowserRouter>
             <Routes>
-                <Route exact path="/" element={<HomeScreen />} />
-                <Route path="start" element={<StarPage />} />
-                <Route path="sign-in" element={<SignInScreen />} />
-                <Route path="planning" element={<PlanningScreen />} />
-                <Route path="scolarite" element={<ReleveNoteScreen />} />
-                <Route path="/enter-note" element={<EnterNote />} />
-                <Route path="/ecole" element={<Ecole />} />
-                <Route path="/student-list" element={<StudentList />} />
-                <Route path="/teacher" element={<Teacher />} />
+                {
+                    authToken ? <>
+                        <Route exact path="/" element={<HomeScreen />} />
+                        <Route path="planning" element={<PlanningScreen />} />
+                        <Route path="scolarite" element={<ReleveNoteScreen />} />
+                        <Route path="/enter-note" element={<EnterNote />} />
+                        <Route path="/ecole" element={<Ecole />} />
+                        <Route path="/student-list" element={<StudentList />} />
+                        <Route path="/teacher" element={<Teacher />} />
+                    </> :
+                        <>
+                            <Route path="start" element={<StarPage />} />
+                            <Route path="sign-in" element={<SignInScreen />} />
+                        </>
+                }
+
             </Routes>
         </BrowserRouter>
     )

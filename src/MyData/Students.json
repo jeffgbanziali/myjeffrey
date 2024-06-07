@@ -786,5 +786,399 @@
                 }
             ]
         }
+    },
+    {
+        "id": 3,
+        "username": "etudiant567",
+        "password": "motdepasse567",
+        "nom": "Blenon",
+        "prenom": "William",
+        "role": "student",
+        "age": 20,
+        "email": "william.blenon@jeffrey.net",
+        "num_telephone": "+1234567890",
+        "annee": "Bachelor 3 ingenierie et numérique",
+        "adresse": {
+            "rue": "3 Cité bellevue",
+            "ville": "Longjumeau",
+            "code_postal": "91160",
+            "pays": "France"
+        },
+        "cours_suivis": [
+            {
+                "title": "PROGRAMMATION FONCTIONNELLE",
+                "start": "2024-06-03T09:00:00",
+                "end": "2024-06-03T13:00:00",
+                "desc": "Bat. EXT, VISIO"
+            },
+            {
+                "title": "DESIGN UX-I - FIGRMA - DESIGN THINKING",
+                "start": "2024-06-04T09:00:00",
+                "end": "2024-06-04T13:00:00",
+                "desc": "Bat. H, H317"
+            },
+            {
+                "title": "PROGRAMMATION FONCTIONNELLE",
+                "start": "2024-06-05T09:00:00",
+                "end": "2024-06-05T13:00:00",
+                "desc": "Bat. H, H317"
+            },
+            {
+                "title": "DOCKER AVANCÉ",
+                "start": "2024-06-06T08:00:00",
+                "end": "2024-06-06T13:00:00",
+                "desc": "Bat. EXT, VISIO"
+            },
+            {
+                "title": "PROGRAMMATION FONCTIONNELLE",
+                "start": "2024-06-07T09:00:00",
+                "end": "2024-06-07T13:00:00",
+                "desc": "Bat. A, A302"
+            },
+            {
+                "title": "SUIVI DE RÉDACTION DU MÉMOIRE PROFESSIONNEL",
+                "start": "2024-06-10T14:00:00",
+                "end": "2024-06-10T17:30:00",
+                "desc": "Bat. EXT, VISIO"
+            },
+            {
+                "title": "PROGRAMMATION FONCTIONNELLE",
+                "start": "2024-06-03T14:00:00",
+                "end": "2024-06-03T17:30:00",
+                "desc": "Bat. EXT, VISIO"
+            },
+            {
+                "title": "DESIGN UX-I - FIGRMA - DESIGN THINKING",
+                "start": "2024-06-04T14:00:00",
+                "end": "2024-06-04T17:30:00",
+                "desc": "Bat. H, H317"
+            },
+            {
+                "title": "PROGRAMMATION FONCTIONNELLE",
+                "start": "2024-06-05T14:00:00",
+                "end": "2024-06-05T17:30:00",
+                "desc": "Bat. H, H317"
+            },
+            {
+                "title": "DOCKER AVANCÉ",
+                "start": "2024-06-06T14:00:00",
+                "end": "2024-06-06T17:30:00",
+                "desc": "Bat. EXT, VISIO"
+            },
+            {
+                "title": "PROGRAMMATION FONCTIONNELLE",
+                "start": "2024-06-07T14:00:00",
+                "end": "2024-06-07T17:30:00",
+                "desc": "Bat. H, H116"
+            },
+            {
+                "title": "SUIVI DE RÉDACTION DU MÉMOIRE PROFESSIONNEL",
+                "start": "2024-06-10T09:00:00",
+                "end": "2024-06-10T13:00:00",
+                "desc": "Bat. EXT, VISIO"
+            },
+            {
+                "title": "REACT.JS",
+                "start": "2024-06-11T09:00:00",
+                "end": "2024-06-11T13:00:00",
+                "desc": "Bat. EXT, VISIO"
+            },
+            {
+                "title": "REACT.JS",
+                "start": "2024-06-11T14:00:00",
+                "end": "2024-06-11T17:30:00",
+                "desc": "Bat. EXT, VISIO"
+            }
+        ],
+        "notes": {
+            "2023-2024 - S6": [
+                {
+                    "ue": "Développement applications Web et Mobile",
+                    "credit": "0/3",
+                    "Moyenne": "-",
+                    "module": [
+                        {
+                            "name": "Jakarta Entreprise Edition (Rappel Java + JEE)",
+                            "teacher": {
+                                "nom": "TAOUALIT",
+                                "prenom": "Madjid"
+                            },
+                            "type": "Cours et TD",
+                            "coef": 1,
+                            "grade": "..."
+                        },
+                        {
+                            "name": "React.js",
+                            "teacher": {
+                                "nom": "BISSOR",
+                                "prenom": "Melvin"
+                            },
+                            "type": "Cours et TD",
+                            "coef": 2,
+                            "grade": "..."
+                        }
+                    ]
+                },
+                {
+                    "ue": "Informatique et systèmes d'information",
+                    "credit": "0/3",
+                    "Moyenne": "-",
+                    "module": [
+                        {
+                            "name": "Docker avancé",
+                            "teacher": {
+                                "nom": "COMOTTI",
+                                "prenom": "Arnaud"
+                            },
+                            "type": "Cours et TD",
+                            "coef": 2,
+                            "grade": "..."
+                        },
+                        {
+                            "name": "Secure coding - OWASP",
+                            "teacher": {
+                                "nom": "SIBER",
+                                "prenom": "ArnEricaud"
+                            },
+                            "type": "Cours et TD",
+                            "coef": 2,
+                            "grade": 12
+                        }
+                    ]
+                },
+                {
+                    "ue": "Modules Complémentaires et Learning XP",
+                    "credit": "0/8",
+                    "Moyenne": "-",
+                    "module": [
+                        {
+                            "name": "Expérience Professionnelle - Stage Alterné Bachelor 3",
+                            "teacher": {
+                                "nom": "",
+                                "prenom": ""
+                            },
+                            "type": "Stage",
+                            "coef": 1,
+                            "grade": "..."
+                        },
+                        {
+                            "name": "Learning Experience",
+                            "teacher": {
+                                "nom": "",
+                                "prenom": ""
+                            },
+                            "type": "Autres",
+                            "coef": 1,
+                            "grade": "..."
+                        }
+                    ]
+                },
+                {
+                    "ue": "Pôle Professsionel et initiation à la recherche",
+                    "credit": "0/10",
+                    "Moyenne": "-",
+                    "module": [
+                        {
+                            "name": "Soutenance",
+                            "teacher": {
+                                "nom": "",
+                                "prenom": ""
+                            },
+                            "type": "Cours et TD",
+                            "coef": 4,
+                            "grade": "..."
+                        },
+                        {
+                            "name": "Suivi de rédaction du mémoire professionnel ",
+                            "teacher": {
+                                "nom": "BYLYKBASHI",
+                                "prenom": "Esat"
+                            },
+                            "type": "Cours et TD",
+                            "coef": 1,
+                            "grade": "..."
+                        }
+                    ]
+                },
+                {
+                    "ue": "Sciences appliquées",
+                    "credit": "0/3",
+                    "Moyenne": "-",
+                    "module": [
+                        {
+                            "name": "Communication & Socio-Psychologie",
+                            "teacher": {
+                                "nom": "",
+                                "prenom": ""
+                            },
+                            "type": "Cours et TD",
+                            "coef": 1,
+                            "grade": "..."
+                        },
+                        {
+                            "name": "Programmation fonctionnelle",
+                            "teacher": {
+                                "nom": "MEKOUAR",
+                                "prenom": "Ayoub"
+                            },
+                            "type": "Cours et TD",
+                            "coef": 2,
+                            "grade": "..."
+                        },
+                        {
+                            "name": "Visualisation des données de recherches (Stack ELK)",
+                            "teacher": {
+                                "nom": "MEKOUAR",
+                                "prenom": "Ayoub"
+                            },
+                            "type": "Cours et TD",
+                            "coef": 2,
+                            "grade": 18
+                        }
+                    ]
+                },
+                {
+                    "ue": "Spécialisation de besoin et conduite de projet numérique",
+                    "credit": "3/3",
+                    "Moyenne": "16",
+                    "module": [
+                        {
+                            "name": "Design UI.X - Figma - Design Thinking",
+                            "teacher": {
+                                "nom": "BYLYKBASHI",
+                                "prenom": "Esat"
+                            },
+                            "type": "Cours et TD",
+                            "coef": 1,
+                            "grade": 16
+                        }
+                    ]
+                }
+            ],
+            "2023-2024 - S5": [
+                {
+                    "ue": "Développement applications Web et Mobile",
+                    "credit": "5/5",
+                    "Moyenne": "15,5",
+                    "module": [
+                        {
+                            "name": "Design Patter (JAVA)",
+                            "teacher": {
+                                "nom": "DOE",
+                                "prenom": "John"
+                            },
+                            "type": "Cours et TD",
+                            "coef": 1,
+                            "grade": 14
+                        },
+                        {
+                            "name": "Framework Symfony + API plateform",
+                            "teacher": {
+                                "nom": "SMITH",
+                                "prenom": "Jane"
+                            },
+                            "type": "Cours et TD",
+                            "coef": 2,
+                            "grade": 16
+                        },
+                        {
+                            "name": "OIS SWIFT",
+                            "teacher": {
+                                "nom": "SMITH",
+                                "prenom": "Jane"
+                            },
+                            "type": "Cours et TD",
+                            "coef": 2,
+                            "grade": 15.8
+                        }
+                    ]
+                },
+                {
+                    "ue": "Informatique et systèmes d'information",
+                    "credit": "3/3",
+                    "Moyenne": "12",
+                    "module": [
+                        {
+                            "name": "Conteneurisation (Docker-compose)",
+                            "teacher": {
+                                "nom": "JOHNSON",
+                                "prenom": "Mark"
+                            },
+                            "type": "Cours et TD",
+                            "coef": 1,
+                            "grade": 12
+                        }
+                    ]
+                },
+                {
+                    "ue": "Pôle Professsionel et initiation à la recherche",
+                    "credit": "5/5",
+                    "Moyenne": "12",
+                    "module": [
+                        {
+                            "name": "Challenge WEB",
+                            "teacher": {
+                                "nom": "BISSOR",
+                                "prenom": "Melvin"
+                            },
+                            "type": "Cours et TD",
+                            "coef": 2,
+                            "grade": 12
+                        }
+                    ]
+                },
+                {
+                    "ue": "Modules Complémentaires et Learning XP",
+                    "credit": "12/12",
+                    "Moyenne": "11",
+                    "module": [
+                        {
+                            "name": "Renforcement technique JAVA",
+                            "teacher": {
+                                "nom": "BISSOR",
+                                "prenom": "Melvin"
+                            },
+                            "type": "Cours et TD",
+                            "coef": 1,
+                            "grade": 11
+                        }
+                    ]
+                },
+                {
+                    "ue": "Sciences appliquées, langues et communication",
+                    "credit": "2/2",
+                    "Moyenne": "14",
+                    "module": [
+                        {
+                            "name": "Renforcement technique JS",
+                            "teacher": {
+                                "nom": "BISSOR",
+                                "prenom": "Melvin"
+                            },
+                            "type": "Cours et TD",
+                            "coef": 1,
+                            "grade": 14
+                        }
+                    ]
+                },
+                {
+                    "ue": "Spécialisation de besoin et conduite de projet numérique",
+                    "credit": "3/3",
+                    "Moyenne": "14",
+                    "module": [
+                        {
+                            "name": "Méthode Agile - SCRUM",
+                            "teacher": {
+                                "nom": "BISSOR",
+                                "prenom": "Melvin"
+                            },
+                            "type": "Cours et TD",
+                            "coef": 1,
+                            "grade": 14
+                        }
+                    ]
+                }
+            ]
+        }
     }
 ]

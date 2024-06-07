@@ -27,7 +27,7 @@ const MyCalendar = ({ user }) => {
         startAccessor="start"
         endAccessor="end"
         style={{
-          height: 'calc(100vh - 200px)', // Ajuste la hauteur pour qu'elle s'adapte à l'écran
+          height: 'calc(100vh - 200px)',
           width: '100%',
         }}
       />

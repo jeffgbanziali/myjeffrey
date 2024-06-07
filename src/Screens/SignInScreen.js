@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import usersData from '../MyData/Students.json';
-import teachersData from '../MyData/Teachers.json';
 
 const SignInScreen = () => {
     const [username, setUsername] = useState('');
@@ -36,13 +34,15 @@ const SignInScreen = () => {
 
         const user = studentsData.find(user => user.username === username && user.password === password) || teachersData.find(user => user.username === username && user.password === password)
         console.log("user user est là", user)
+        console.log("mon username", user.username, "mon mot de passe", user.password)
+
+
         if (user) {
             const token = btoa(`${username}:${password}`);
             localStorage.setItem('authToken', token);
-            localStorage.setItem('user', JSON.stringify(user));
             console.log("Mon user token", token)
 
-            navigate("/", { state: { user } });
+            navigate("/home", { state: { user } });
             window.location.reload();
         } else {
             setError('Identifiant ou mot de passe incorrect');

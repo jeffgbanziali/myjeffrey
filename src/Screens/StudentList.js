@@ -19,7 +19,9 @@ const StudentList = () => {
 
             const enrolledStudents = studentsData.filter(student =>
                 student.cours_suivis.some(course => teacherCourseIds.includes(course.title))
+                
             );
+            
 
 
             console.log("Ses cours", enrolledStudents)

@@ -9,6 +9,7 @@ import Teacher from '../Screens/Teacher';
 import StudentList from '../Screens/StudentList';
 import EnterNote from '../Screens/EnterNote';
 import Ecole from '../Screens/Ecole';
+import RegisterScreen from '../Screens/RegisterScreen';
 
 const Navigation = () => {
 
@@ -22,7 +23,7 @@ const Navigation = () => {
             <Routes>
                 {
                     authToken ? <>
-                        <Route exact path="/" element={<HomeScreen />} />
+                        <Route path="/home" element={<HomeScreen />} />
                         <Route path="planning" element={<PlanningScreen />} />
                         <Route path="scolarite" element={<ReleveNoteScreen />} />
                         <Route path="/enter-note" element={<EnterNote />} />
@@ -31,6 +32,7 @@ const Navigation = () => {
                         <Route path="/teacher" element={<Teacher />} />
                     </> :
                         <>
+                            <Route exact path="/" element={<RegisterScreen />} />
                             <Route path="start" element={<StarPage />} />
                             <Route path="sign-in" element={<SignInScreen />} />
                         </>

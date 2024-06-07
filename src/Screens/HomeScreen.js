@@ -1,16 +1,16 @@
 import React from 'react'
 import Navbar from '../components/NavBar/Navbar'
-import { useLocation, useNavigate} from 'react-router-dom';
-import studentsData from '../MyData/Students.json';
-import teacherData from '../MyData/Teachers.json';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const HomeScreen = () => {
     const location = useLocation()
     const { user } = location.state
     const navigateTo = useNavigate();
 
+    const studentsData = JSON.parse(localStorage.getItem('students'));
+    const teachersData = JSON.parse(localStorage.getItem('teachers'));
     const myUser = studentsData.find(userLocal => userLocal.username === user.username) ||
-        teacherData.find(userLocal => userLocal.username === user.username);
+        teachersData.find(userLocal => userLocal.username === user.username)
 
     console.log("my user", myUser)
 

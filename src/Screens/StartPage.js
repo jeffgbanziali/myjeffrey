@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { initialUsers } from '../InitialState/initialUsers';
+//import { initialUsers } from '../InitialState/initialUsers';
 
 const StarPage = () => {
   return (
@@ -23,13 +23,13 @@ const StarPage = () => {
               </button>
             </Link>
 
-            <button
+           {/* <button
 
               onClick={initialUsers()}
 
               className="mt-6 w-48 bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600">
               SE CONNECTER
-            </button>
+            </button>*/}
             <p className="mt-4 text-sm text-gray-600">
               © 2024 Efrei | Établissement d'enseignement supérieur technique privé
               <br />

@@ -48,7 +48,7 @@ const Navbar = ({ user }) => {
                     <ul className={`xl:flex hidden  justify-around w-full  ${isMenuOpen === true && 'hidden'} p-4 `}>
                         {user.role === "student" ? (
                             <>
-                                <li><button onClick={() => navigateTo('/')}>Accueil</button></li>
+                                <li><button onClick={() => navigateTo('/home')}>Accueil</button></li>
                                 <li><button onClick={() => navigateTo('/planning')}>Planning</button></li>
                                 <li><button onClick={() => navigateTo('/scolarite')}>Scolarité</button></li>
                                 <li><button onClick={() => navigateTo('/ecole')}>L'École</button></li>
@@ -56,9 +56,9 @@ const Navbar = ({ user }) => {
                                 <li><button onClick={() => navigateTo('/stage-alternance')}>Stage et alternance</button></li>
                                 <li><button onClick={() => navigateTo('/outils-aides')}>Outils et aides</button></li>
                             </>
-                        ) : (
+                        ) : user.role === "teacher" ? (
                             <>
-                                <li><button onClick={() => navigateTo('/')}>Accueil</button></li>
+                                <li><button onClick={() => navigateTo('/home')}>Accueil</button></li>
                                 <li><button onClick={() => navigateTo('/planning')}>Planning</button></li>
                                 <li><button onClick={() => navigateTo('/enter-note')}>Rentrer les notes</button></li>
                                 <li><button onClick={() => navigateTo('/ecole')}>L'École</button></li>
@@ -66,7 +66,8 @@ const Navbar = ({ user }) => {
                                 <li><button onClick={() => navigateTo('/teacher')}>Mon parcours</button></li>
                                 <li><button onClick={() => navigateTo('/outils-aides')}>Outils et aides</button></li>
                             </>
-                        )}
+                        ) : null
+                        }
                     </ul>
                 </div>
 
@@ -77,7 +78,7 @@ const Navbar = ({ user }) => {
                             <ul className="flex flex-col  item-center justify-center space-y-2 lg:flex-row lg:w-[800px] h-full lg:justify-around p-4">
                                 {user.role === "student" ? (
                                     <>
-                                        <li><button onClick={() => navigateTo('/')}>Accueil</button></li>
+                                        <li><button onClick={() => navigateTo('/home')}>Accueil</button></li>
                                         <li><button onClick={() => navigateTo('/planning')}>Planning</button></li>
                                         <li><button onClick={() => navigateTo('/scolarite')}>Scolarité</button></li>
                                         <li><button onClick={() => navigateTo('/ecole')}>L'École</button></li>
@@ -85,9 +86,9 @@ const Navbar = ({ user }) => {
                                         <li><button onClick={() => navigateTo('/stage-alternance')}>Stage et alternance</button></li>
                                         <li><button onClick={() => navigateTo('/outils-aides')}>Outils et aides</button></li>
                                     </>
-                                ) : (
+                                ) : user.role === "teacher" ? (
                                     <>
-                                        <li><button onClick={() => navigateTo('/')}>Accueil</button></li>
+                                        <li><button onClick={() => navigateTo('/home')}>Accueil</button></li>
                                         <li><button onClick={() => navigateTo('/planning')}>Planning</button></li>
                                         <li><button onClick={() => navigateTo('/enter-note')}>Rentrer les notes</button></li>
                                         <li><button onClick={() => navigateTo('/ecole')}>L'École</button></li>
@@ -95,7 +96,8 @@ const Navbar = ({ user }) => {
                                         <li><button onClick={() => navigateTo('/teacher')}>Mon parcours</button></li>
                                         <li><button onClick={() => navigateTo('/outils-aides')}>Outils et aides</button></li>
                                     </>
-                                )}
+                                ) : null
+                                }
                             </ul>
                         </div>
 

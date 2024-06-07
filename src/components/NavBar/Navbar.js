@@ -42,13 +42,34 @@ const Navbar = ({ user }) => {
                 <div className='h-[50%] w-full items-center justify-center flex'>
                     <div className='flex  w-[800px] h-full'>
                         <ul className="flex justify-around w-full p-4">
-                            <li><button onClick={() => navigateTo('/')}>Accueil</button></li>
-                            <li><button onClick={() => navigateTo('/planning')}>Planning</button></li>
-                            <li><button onClick={() => navigateTo('/scolarite')}>Scolarité</button></li>
-                            <li><button onClick={() => navigateTo('/ecole')}>L'École</button></li>
-                            <li><button onClick={() => navigateTo('/vie-etudiante')}>Vie étudiante</button></li>
-                            <li><button onClick={() => navigateTo('/stage-alternance')}>Stage et alternance</button></li>
-                            <li><button onClick={() => navigateTo('/outils-aides')}>Outils et aides</button></li>
+                            {
+                                user.role === "student" ? (
+                                    <>
+
+                                        <li><button onClick={() => navigateTo('/')}>Accueil</button></li>
+                                        <li><button onClick={() => navigateTo('/planning')}>Planning</button></li>
+                                        <li><button onClick={() => navigateTo('/scolarite')}>Scolarité</button></li>
+                                        <li><button onClick={() => navigateTo('/ecole')}>L'École</button></li>
+                                        <li><button onClick={() => navigateTo('/vie-etudiante')}>Vie étudiante</button></li>
+                                        <li><button onClick={() => navigateTo('/stage-alternance')}>Stage et alternance</button></li>
+                                        <li><button onClick={() => navigateTo('/outils-aides')}>Outils et aides</button></li>
+                                    </>
+
+                                ) : (
+                                    <>
+
+                                        <li><button onClick={() => navigateTo('/')}>Accueil</button></li>
+                                        <li><button onClick={() => navigateTo('/planning')}>Planning</button></li>
+                                        <li><button onClick={() => navigateTo('/enter-note')}>Rentrer les notes</button></li>
+                                        <li><button onClick={() => navigateTo('/ecole')}>L'École</button></li>
+                                        <li><button onClick={() => navigateTo('/student-list')}>Mes étudiants</button></li>
+                                        <li><button onClick={() => navigateTo('/techear')}>Mon parcours</button></li>
+                                        <li><button onClick={() => navigateTo('/outils-aides')}>Outils et aides</button></li>
+                                    </>
+
+                                )
+                            }
+
                         </ul>
                     </div>
                 </div>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import usersData from '../MyData/UserData.json';
+import usersData from '../MyData/Students.json';
 
 const SignInScreen = () => {
 

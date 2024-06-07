@@ -1,0 +1,86 @@
+[
+    {
+        "title": "PROGRAMMATION FONCTIONNELLE",
+        "start": "2024-06-03T09:00:00",
+        "end": "2024-06-03T13:00:00",
+        "desc": "Bat. EXT, VISIO"
+    },
+    {
+        "title": "DESIGN UX-I - FIGRMA - DESIGN THINKING",
+        "start": "2024-06-04T09:00:00",
+        "end": "2024-06-04T13:00:00",
+        "desc": "Bat. H, H317"
+    },
+    {
+        "title": "PROGRAMMATION FONCTIONNELLE",
+        "start": "2024-06-05T09:00:00",
+        "end": "2024-06-05T13:00:00",
+        "desc": "Bat. H, H317"
+    },
+    {
+        "title": "DOCKER AVANCÉ",
+        "start": "2024-06-06T08:00:00",
+        "end": "2024-06-06T13:00:00",
+        "desc": "Bat. EXT, VISIO"
+    },
+    {
+        "title": "PROGRAMMATION FONCTIONNELLE",
+        "start": "2024-06-07T09:00:00",
+        "end": "2024-06-07T13:00:00",
+        "desc": "Bat. A, A302"
+    },
+    {
+        "title": "SUIVI DE RÉDACTION DU MÉMOIRE PROFESSIONNEL",
+        "start": "2024-06-10T14:00:00",
+        "end": "2024-06-10T17:30:00",
+        "desc": "Bat. EXT, VISIO"
+    },
+    {
+        "title": "PROGRAMMATION FONCTIONNELLE",
+        "start": "2024-06-03T14:00:00",
+        "end": "2024-06-03T17:30:00",
+        "desc": "Bat. EXT, VISIO"
+    },
+    {
+        "title": "DESIGN UX-I - FIGRMA - DESIGN THINKING",
+        "start": "2024-06-04T14:00:00",
+        "end": "2024-06-04T17:30:00",
+        "desc": "Bat. H, H317"
+    },
+    {
+        "title": "PROGRAMMATION FONCTIONNELLE",
+        "start": "2024-06-05T14:00:00",
+        "end": "2024-06-05T17:30:00",
+        "desc": "Bat. H, H317"
+    },
+    {
+        "title": "DOCKER AVANCÉ",
+        "start": "2024-06-06T14:00:00",
+        "end": "2024-06-06T17:30:00",
+        "desc": "Bat. EXT, VISIO"
+    },
+    {
+        "title": "PROGRAMMATION FONCTIONNELLE",
+        "start": "2024-06-07T14:00:00",
+        "end": "2024-06-07T17:30:00",
+        "desc": "Bat. H, H116"
+    },
+    {
+        "title": "SUIVI DE RÉDACTION DU MÉMOIRE PROFESSIONNEL",
+        "start": "2024-06-10T09:00:00",
+        "end": "2024-06-10T13:00:00",
+        "desc": "Bat. EXT, VISIO"
+    },
+    {
+        "title": "REACT.JS",
+        "start": "2024-06-11T09:00:00",
+        "end": "2024-06-11T13:00:00",
+        "desc": "Bat. EXT, VISIO"
+    },
+    {
+        "title": "REACT.JS",
+        "start": "2024-06-11T14:00:00",
+        "end": "2024-06-11T17:30:00",
+        "desc": "Bat. EXT, VISIO"
+    }
+]

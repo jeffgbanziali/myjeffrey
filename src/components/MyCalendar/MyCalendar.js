@@ -2,22 +2,13 @@ import React, { useEffect, useState } from 'react';
 import { Calendar, momentLocalizer } from 'react-big-calendar';
 import moment from 'moment';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
-import students from "../../MyData/Students.json";
-//import rawCourses from "../../MyData/Courses.json";
-
 
 const localizer = momentLocalizer(moment);
 
 const MyCalendar = ({ user }) => {
   const [courses, setCourses] = useState([]);
 
-
-
-  const rawCourses = user.cours_suivis || user.courses
-
-  console.log('mes cours que je suis', rawCourses)
-
- 
+  const rawCourses = user.cours_suivis || user.courses;
 
   useEffect(() => {
     const parsedCourses = rawCourses.map(course => ({
@@ -26,34 +17,20 @@ const MyCalendar = ({ user }) => {
       end: new Date(course.end),
     }));
     setCourses(parsedCourses);
-  }, []);
+  }, [rawCourses]);
 
   return (
-    <div>
-
-      {
-        user.role === "student" ?
-          <Calendar
-            localizer={localizer}
-            events={courses}
-            startAccessor="start"
-            endAccessor="end"
-            style={{
-              height: 600,
-              width: 1000,
-            }}
-          /> : <Calendar
-            localizer={localizer}
-            events={courses}
-            startAccessor="start"
-            endAccessor="end"
-            style={{
-              height: 600,
-              width: 1000,
-            }}
-          />
-      }
-
+    <div className="w-full h-full">
+      <Calendar
+        localizer={localizer}
+        events={courses}
+        startAccessor="start"
+        endAccessor="end"
+        style={{
+          height: 'calc(100vh - 200px)', // Ajuste la hauteur pour qu'elle s'adapte à l'écran
+          width: '100%',
+        }}
+      />
     </div>
   );
 };

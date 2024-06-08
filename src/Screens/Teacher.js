@@ -27,6 +27,7 @@ const Teacher = () => {
         };
         setCourses([...courses, newCourse]);
         setNewCourseTitle('');
+        setNewCourseTitle(newCourseTitle);
         setNewCourseDesc('');
         setNewCourseStart('');
         setNewCourseEnd('');
@@ -48,7 +49,7 @@ const Teacher = () => {
                 const updatedCoursSuivis = [...s.cours_suivis, updatedCourses.find(course => course.id === courseId)];
                 s.cours_suivis = updatedCoursSuivis;
 
-                const ue = s.notes["2023-2024 - S6"].find(ue => ue.ue === "Développement applications Web et Mobile");
+                const ue = s.notes["2023-2024 - S5"].find(ue => ue.ue === "Développement applications Web et Mobile");
                 if (ue) {
                     const module = ue.module.find(mod => mod.name === newCourseTitle);
                     if (module) {
@@ -81,10 +82,35 @@ const Teacher = () => {
     const handleDeleteStudentFromCourse = (courseId, studentId) => {
         setCourses(
             courses.map(course =>
-                course.id === courseId ? { ...course, students: course.students.filter(student => student.id !== studentId) } : course
+                course.id === courseId ? { ...course, students: course.students.filter(id => id !== studentId) } : course
             )
         );
+
+        const updatedStudents = studentsData.map(s => {
+            if (s.id === studentId) {
+                const updatedCoursSuivis = s.cours_suivis.filter(course => course.id !== courseId);
+                s.cours_suivis = updatedCoursSuivis;
+
+                s.notes["2023-2024 - S6"].forEach(ue => {
+                    ue.module = ue.module.filter(mod => mod.name !== courses.find(course => course.id === courseId).title);
+                });
+            }
+            return s;
+        });
+
+        const studentsCopy = updatedStudents.map(student => ({
+            ...student,
+            cours_suivis: student.cours_suivis.map(course => ({
+                ...course,
+                students: undefined
+            }))
+        }));
+
+        localStorage.setItem('students', JSON.stringify(studentsCopy));
     };
+
+
+    console.log("Pourquoi toi ", newCourseTitle)
 
     const customStyles = {
         content: {

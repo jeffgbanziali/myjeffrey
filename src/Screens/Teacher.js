@@ -3,12 +3,13 @@ import Navbar from '../components/NavBar/Navbar';
 import { useLocation } from 'react-router';
 import Modal from 'react-modal';
 import Select from 'react-select';
-import studentsData from '../MyData/Students.json';
+import { TeacherClass } from '../MesClasses/TeacherClass';
 
 const Teacher = () => {
     const location = useLocation();
     const { user } = location.state;
-
+    const studentsData = JSON.parse(localStorage.getItem('students'))
+    const teachersData = JSON.parse(localStorage.getItem('teachers'));
     const [courses, setCourses] = useState(user.courses || []);
     const [modalIsOpen, setModalIsOpen] = useState(false);
     const [newCourseTitle, setNewCourseTitle] = useState('');
@@ -25,14 +26,31 @@ const Teacher = () => {
             desc: newCourseDesc,
             students: [],
         };
+
+        // Mise à jour des cours localement
         setCourses([...courses, newCourse]);
+
+        // Réinitialisation des champs du formulaire
         setNewCourseTitle('');
-        setNewCourseTitle(newCourseTitle);
         setNewCourseDesc('');
         setNewCourseStart('');
         setNewCourseEnd('');
         setModalIsOpen(false);
+
+        // Mise à jour du JSON des professeurs
+        const updatedTeachers = teachersData.map(t => {
+            if (t.id === user.id) {
+                const teacher = new TeacherClass(t.id, t.username, t.password, t.nom, t.prenom, t.email, t.courses);
+                teacher.addCourse(newCourse);
+                return teacher;
+            }
+            return t;
+        });
+
+        // Sauvegarde des données mises à jour dans localStorage
+        localStorage.setItem('teachers', JSON.stringify(updatedTeachers));
     };
+
 
     const handleDeleteCourse = (courseId) => {
         setCourses(courses.filter(course => course.id !== courseId));

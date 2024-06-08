@@ -5,4 +5,11 @@ export class TeacherClass extends UserClass {
         super(id, username, password, 'teacher', nom, prenom, email);
         this.courses = courses;
     }
+
+    addCourse(course) {
+        this.courses.push(course);
+    }
+
 }
+
+

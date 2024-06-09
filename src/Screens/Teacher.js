@@ -144,7 +144,7 @@ const Teacher = () => {
     };
 
     return (
-        <div className='fixed top-0 left-0 w-full h-full bg-gray-100 flex flex-col'>
+        <div className=' top-0 left-0 w-full h-full bg-gray-100 flex flex-col'>
             <Navbar user={user} />
             <div className='flex flex-col items-center justify-center p-4'>
                 <h1 className='text-3xl font-bold mb-4'>Gestion des cours</h1>
@@ -174,6 +174,7 @@ const Teacher = () => {
                                 <ul>
                                     {course.students && course.students.map(studentId => {
                                         const student = studentsData.find(s => s.id === studentId);
+                                        console.log("Mon student", studentId)
                                         return (
                                             <li key={student.id} className='flex justify-between items-center'>
                                                 {student.prenom} {student.nom}

@@ -8,8 +8,11 @@ const StudentList = () => {
     const location = useLocation()
     const { user } = location.state
     const [students, setStudents] = useState([]);
+    const [courses, setCourses] = useState(user.courses || []);
+
 
     const studentsData = JSON.parse(localStorage.getItem('students'))
+    const teachersData = JSON.parse(localStorage.getItem('teachers'))
 
     useEffect(() => {
 
@@ -19,19 +22,50 @@ const StudentList = () => {
 
             const enrolledStudents = studentsData.filter(student =>
                 student.cours_suivis.some(course => teacherCourseIds.includes(course.title))
-                
+
             );
-            
 
 
-            console.log("Ses cours", enrolledStudents)
+            //console.log("Ses cours", enrolledStudents)
 
 
             setStudents(enrolledStudents);
         }
     }, [user]);
 
-    console.log("Mon cours", students)
+
+    const handleDeleteStudentFromCourse = (courseId, studentId) => {
+        setCourses(
+            courses.map(course =>
+                course.id === courseId ? { ...course, students: course.students.filter(id => id !== studentId) } : course
+            )
+        );
+
+        const updatedStudents = studentsData.map(s => {
+            if (s.id === studentId) {
+                const updatedCoursSuivis = s.cours_suivis.filter(course => course.id !== courseId);
+                s.cours_suivis = updatedCoursSuivis;
+
+                s.notes["2023-2024 - S6"].forEach(ue => {
+                    ue.module = ue.module.filter(mod => mod.name !== courses.find(course => course.id === courseId).title);
+                });
+            }
+            return s;
+        });
+
+        const studentsCopy = updatedStudents.map(student => ({
+            ...student,
+            cours_suivis: student.cours_suivis.map(course => ({
+                ...course,
+                students: undefined
+            }))
+        }));
+
+        localStorage.setItem('students', JSON.stringify(studentsCopy));
+    };
+
+
+    console.log('Mes cours', courses)
 
     return (
         <div className=' top-0 left-0 w-full h-full bg-opacity-75 flex'>
@@ -42,13 +76,24 @@ const StudentList = () => {
                         <div className="w-full">
                             <h1 className="text-2xl font-bold mb-4">Mes étudiants</h1>
                             <ul className="space-y-2">
-                                {students.map(student => (
-                                    <li key={student.id} className="p-4 bg-gray-100 rounded-md shadow-sm flex items-center justify-between">
-                                        <div>
-                                            <span className="font-semibold">{student.prenom} {student.nom}</span> - <a href={`${student.email}`} className="underline text-blue-600">{student.email}</a> | <span className="text-gray-600">{student.annee}</span>
-                                        </div>
-                                    </li>
-                                ))}
+                                {students.map(student => {
+                                    console.log()
+
+
+                                    return (
+                                        <li key={student.id} className="p-4 bg-gray-100 rounded-md shadow-sm flex items-center justify-between">
+                                            <div>
+                                                <span className="font-semibold">{student.prenom} {student.nom}</span> - <a href={`${student.email}`} className="underline text-blue-600">{student.email}</a> | <span className="text-gray-600">{student.annee}</span>
+                                            </div>
+                                            <button
+                                                onClick={() => handleDeleteStudentFromCourse(student.id)}
+                                                className='text-red-500 hover:text-red-700'
+                                            >
+                                                Retirer
+                                            </button>
+                                        </li>
+                                    )
+                                })}
                             </ul>
                         </div>
                     </div>

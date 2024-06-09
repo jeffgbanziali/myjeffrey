@@ -12,6 +12,16 @@ const Navbar = ({ user }) => {
         setIsMenuOpen(false);
     };
 
+
+
+    const handleLogout = () => {
+        localStorage.removeItem('authToken');
+        localStorage.removeItem('user');
+        navigateTo('/sign-in');
+        window.location.reload();
+
+    };
+
     return (
         <>
             <div className='z-10 flex flex-col items-center justify-center  xl:h-[120px] h-[90px] shadow-lg w-full'>
@@ -34,9 +44,14 @@ const Navbar = ({ user }) => {
                         <p className='font-bold xl:text-[16px] text-[10px] text-white'>
                             {user.prenom} {user.nom}
                         </p>
-                        <div className='ml-4 xl:w-8 xl:h-8 h-6 w-6 rounded-full'>
+                        <div className='ml-4 xl:w-8 xl:h-8 h-6 w-6 mr-4 rounded-full'>
                             <img className="w-full h-full rounded-full" src="https://www.iprcenter.gov/image-repository/blank-profile-picture.png/@@images/image.png" alt="Profil" />
                         </div>
+                        <button
+                            onClick={handleLogout}
+                            className="xl:w-24  w-24 flex item-center justify-center bg-blue-500 text-white text-[8px] py-2 rounded-lg hover:bg-blue-600">
+                            SE DECONNECTER
+                        </button>
                         <div className='lg:hidden ml-4'>
                             <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
                                 {isMenuOpen ? <FiX className='h-8 w-8 text-white' /> : <FiMenu className='h-8 w-8 text-white' />}

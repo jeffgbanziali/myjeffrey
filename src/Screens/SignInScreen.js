@@ -34,19 +34,18 @@ const SignInScreen = () => {
 
         const user = studentsData.find(user => user.username === username && user.password === password) || teachersData.find(user => user.username === username && user.password === password)
         console.log("user user est là", user)
-        console.log("mon username", user.username, "mon mot de passe", user.password)
 
 
         if (user) {
             const token = btoa(`${username}:${password}`);
             localStorage.setItem('authToken', token);
-            console.log("Mon user token", token)
 
             navigate("/home", { state: { user } });
             window.location.reload();
         } else {
             setError('Identifiant ou mot de passe incorrect');
         }
+
     };
 
     return (

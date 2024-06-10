@@ -5,7 +5,6 @@ import { useLocation, useNavigate } from 'react-router-dom';
 const HomeScreen = () => {
     const location = useLocation();
     const { user } = location.state;
-    const navigateTo = useNavigate();
 
     const studentsData = JSON.parse(localStorage.getItem('students'));
     const teachersData = JSON.parse(localStorage.getItem('teachers'));

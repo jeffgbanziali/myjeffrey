@@ -57,22 +57,28 @@ const Teacher = () => {
     };
 
     const handleAddStudentToCourse = (courseId, student) => {
+        // Mise à jour des cours pour ajouter l'étudiant au cours spécifique
         const updatedCourses = courses.map(course =>
             course.id === courseId ? { ...course, students: [...course.students, student.id] } : course
         );
         setCourses(updatedCourses);
 
+        // Mise à jour des données des étudiants pour ajouter le cours à l'étudiant spécifique
         const updatedStudents = studentsData.map(s => {
             if (s.id === student.id) {
+                // Ajout du cours à la liste des cours suivis par l'étudiant
                 const updatedCoursSuivis = [...s.cours_suivis, updatedCourses.find(course => course.id === courseId)];
                 s.cours_suivis = updatedCoursSuivis;
 
+                // Ajout du module dans l'UE correspondante dans les notes de l'étudiant
                 const ue = s.notes["2023-2024 - S5"].find(ue => ue.ue === "Développement applications Web et Mobile");
                 if (ue) {
                     const module = ue.module.find(mod => mod.name === newCourseTitle);
                     if (module) {
+                        // Si le module existe déjà, on met à jour sa note
                         module.grade = '...';
                     } else {
+                        // Sinon, on ajoute un nouveau module
                         ue.module.push({
                             name: newCourseTitle,
                             teacher: { nom: user.nom, prenom: user.prenom },
@@ -86,6 +92,7 @@ const Teacher = () => {
             return s;
         });
 
+        // Mise à jour du stockage local
         const studentsCopy = updatedStudents.map(student => ({
             ...student,
             cours_suivis: student.cours_suivis.map(course => ({
@@ -96,6 +103,9 @@ const Teacher = () => {
 
         localStorage.setItem('students', JSON.stringify(studentsCopy));
     };
+
+
+
 
     const handleDeleteStudentFromCourse = (courseId, studentId) => {
         setCourses(

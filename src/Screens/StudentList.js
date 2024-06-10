@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import Navbar from '../components/NavBar/Navbar'
 import { useLocation } from 'react-router'
-//import studentsData from '../MyData/Students.json';
-import teachersData from '../MyData/Teachers.json';
+
+
 
 const StudentList = () => {
     const location = useLocation()
@@ -26,7 +26,6 @@ const StudentList = () => {
             );
 
 
-            //console.log("Ses cours", enrolledStudents)
 
 
             setStudents(enrolledStudents);
@@ -34,35 +33,7 @@ const StudentList = () => {
     }, [user]);
 
 
-    const handleDeleteStudentFromCourse = (courseId, studentId) => {
-        setCourses(
-            courses.map(course =>
-                course.id === courseId ? { ...course, students: course.students.filter(id => id !== studentId) } : course
-            )
-        );
 
-        const updatedStudents = studentsData.map(s => {
-            if (s.id === studentId) {
-                const updatedCoursSuivis = s.cours_suivis.filter(course => course.id !== courseId);
-                s.cours_suivis = updatedCoursSuivis;
-
-                s.notes["2023-2024 - S6"].forEach(ue => {
-                    ue.module = ue.module.filter(mod => mod.name !== courses.find(course => course.id === courseId).title);
-                });
-            }
-            return s;
-        });
-
-        const studentsCopy = updatedStudents.map(student => ({
-            ...student,
-            cours_suivis: student.cours_suivis.map(course => ({
-                ...course,
-                students: undefined
-            }))
-        }));
-
-        localStorage.setItem('students', JSON.stringify(studentsCopy));
-    };
 
 
     console.log('Mes cours', courses)
@@ -85,12 +56,6 @@ const StudentList = () => {
                                             <div>
                                                 <span className="font-semibold">{student.prenom} {student.nom}</span> - <a href={`${student.email}`} className="underline text-blue-600">{student.email}</a> | <span className="text-gray-600">{student.annee}</span>
                                             </div>
-                                            <button
-                                                onClick={() => handleDeleteStudentFromCourse(student.id)}
-                                                className='text-red-500 hover:text-red-700'
-                                            >
-                                                Retirer
-                                            </button>
                                         </li>
                                     )
                                 })}
